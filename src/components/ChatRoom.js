@@ -1,8 +1,8 @@
 import React from 'react'
 
-const convos = [
-  {
-    convo: [ "excues", "me", "whst"
+// const convos = [
+//   {
+//     convo: [ "excues", "me", "whst"
       // {
       //   message: "tree824: Yeah man I know exactly what you mean. That happened to me last year."
       // },
@@ -21,21 +21,23 @@ const convos = [
       // {
       //   message: "bear2041: *sigh* it's been a really tough week guys :("
       // },
-    ],
-  },
-  {
-    convo: [ "oiuwef", "asldjfk", "whst"]
-  },
-  {
-    convo: [ "98s7e", "me", "whst"]
-  }
-]
+//     ],
+//   },
+//   {
+//     convo: [ "oiuwef", "asldjfk", "whst"]
+//   },
+//   {
+//     convo: [ "98s7e", "me", "whst"]
+//   }
+// ]
+
 function ChatRoom(props) {
   return (
-    <div style={{flex: "1"}}>
-      ChatRoom
+    <div style={{ outline: "solid", flex: "1"}}>
+      <iframe title="hi" width="100%" height="100%" frameBorder="0" src={props.link}></iframe>
+      {/* ChatRoom
       {console.log("Received updated", props.openChat)}
-      {convos[props.openChat].convo.map(word => word)}
+      {convos[props.openChat].convo.map(word => word)} */}
 
       {/* {props.openChat && convos[props.openChat].convo.length} */}
       {/* {console.log("HEY", convos[props.openChat].convo.length)} */} 
