@@ -34,6 +34,53 @@ function ChatCard(props) {
         const name = swrResult.data
         const err = swrResult.err
 
+        useEffect(() => {
+            function psafe() {
+            // find container
+            var myHeaders = new Headers();
+            myHeaders.append("Accept", "application/json");
+            myHeaders.append("Authorization", "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODcsInVzZXJuYW1lIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJleHAiOjE2NDkxMzI2MjMsImVtYWlsIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTY0ODg3MzQyMywidHdvX2ZhY3Rvcl9hdXRoZW50aWNhdGlvbl9hdXRob3JpemVkIjp0cnVlLCJzdWJzY3JpcHRpb24iOm51bGwsImtleV9pZCI6IjhhYjQyNTYyLTEyYTYtNDFhYi1iODJjLTE1Yjc3ZmY4MGYzZCJ9.JsUYgIibx4SBgWoLyiLyJRt2aY6sqwaXZtIyMfGN-Ns");
+            myHeaders.append("Content-Type", "application/json");
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+            const id =  props.chat.recipientItemId
+            console.log(id, props.chat)
+            fetch("https://api.botdoc.io/v1/module_container/recipientitem/" + id + "/", requestOptions)
+            .then(response => response.json())
+            .then(data1 => {
+                console.log(data1);
+                props.setLink(data1.link)
+
+                var myHeaders = new Headers();
+                myHeaders.append("Authorization", "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODcsInVzZXJuYW1lIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJleHAiOjE2NDkxMzI2MjMsImVtYWlsIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTY0ODg3MzQyMywidHdvX2ZhY3Rvcl9hdXRoZW50aWNhdGlvbl9hdXRob3JpemVkIjp0cnVlLCJzdWJzY3JpcHRpb24iOm51bGwsImtleV9pZCI6IjhhYjQyNTYyLTEyYTYtNDFhYi1iODJjLTE1Yjc3ZmY4MGYzZCJ9.JsUYgIibx4SBgWoLyiLyJRt2aY6sqwaXZtIyMfGN-Ns");
+
+                var formdata = new FormData();
+                formdata.append("container", "1493044");
+                formdata.append("body", "This is the P-Safe TigerHelp Live Chat. You are currently #2 in line. Expected wait time: 7 minutes");
+                formdata.append("title", "");
+
+                var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: formdata,
+                redirect: 'follow'
+                };
+
+                fetch("https://api.botdoc.io/v1/module_container/message/", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+    
+            })
+            }
+            if (props.chat.name === "P-Safe") {
+                psafe()
+            }
+        }, [props, props.chat.name])
+
 
         if (error) return <div>failed to load</div>
         if (!data) return <div>loading...</div>
@@ -51,6 +98,7 @@ function ChatCard(props) {
             // console.log("HEYYY")
         // })
   
+        
 
     function click() {
         // find container
