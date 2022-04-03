@@ -30,7 +30,8 @@ function ChatCard(props) {
     // myHeaders.append("Authorization", "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODcsInVzZXJuYW1lIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJleHAiOjE2NDkxMzI2MjMsImVtYWlsIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTY0ODg3MzQyMywidHdvX2ZhY3Rvcl9hdXRoZW50aWNhdGlvbl9hdXRob3JpemVkIjp0cnVlLCJzdWJzY3JpcHRpb24iOm51bGwsImtleV9pZCI6IjhhYjQyNTYyLTEyYTYtNDFhYi1iODJjLTE1Yjc3ZmY4MGYzZCJ9.JsUYgIibx4SBgWoLyiLyJRt2aY6sqwaXZtIyMfGN-Ns");
     // myHeaders.append("Content-Type", "application/json");
     // const body = JSON.stringify({
-    //     page_type: "p2"
+    //     page_type: "p2",
+    //     callback_url: "http://be7d-140-180-240-87.ngrok.io/checkMessage"
     // })
 
     // var requestOptions = {
@@ -45,6 +46,7 @@ function ChatCard(props) {
     // .then(data => {
     //     console.log(data);
     //     let containerId = data.id
+    //     // containerId = 1492726
 
 
     //     var myHeaders = new Headers();
@@ -53,8 +55,8 @@ function ChatCard(props) {
     //     myHeaders.append("Content-Type", "application/json");
 
     //     const body = JSON.stringify({
-    //         first_name: "Ty",
-    //         last_name: "Gerr"
+    //         first_name: "Tai",
+    //         last_name: "Gurr"
     //     })
 
     //     var requestOptions = {
@@ -63,7 +65,7 @@ function ChatCard(props) {
     //     body: body,
     //     redirect: 'follow'
     //     };
-    //     // containerId = 1492724
+    //     // containerId = 1492884
 
     //     // recipient
     //     fetch("https://api.botdoc.io/v1/module_container/container/" + containerId + "/recipient/", requestOptions)
