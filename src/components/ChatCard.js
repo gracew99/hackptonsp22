@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react';
 
 function ChatCard(props) {
-    
-    
+    const [preview, setPreview] = useState("")
+    useEffect(() => {
+        const containerId = props.chat.containerId
+        // console.log(containerId)
+        var myHeaders = new Headers();
+        myHeaders.append("Accept", "application/json");
+        myHeaders.append("Authorization", "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxODcsInVzZXJuYW1lIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJleHAiOjE2NDkxMzI2MjMsImVtYWlsIjoiNy5rbmlja3NmYW4uN0BnbWFpbC5jb20iLCJvcmlnX2lhdCI6MTY0ODg3MzQyMywidHdvX2ZhY3Rvcl9hdXRoZW50aWNhdGlvbl9hdXRob3JpemVkIjp0cnVlLCJzdWJzY3JpcHRpb24iOm51bGwsImtleV9pZCI6IjhhYjQyNTYyLTEyYTYtNDFhYi1iODJjLTE1Yjc3ZmY4MGYzZCJ9.JsUYgIibx4SBgWoLyiLyJRt2aY6sqwaXZtIyMfGN-Ns");
+        myHeaders.append("Content-Type", "application/json");
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        fetch("https://api.botdoc.io/v1/module_container/messagereply/?recipient__container=" + containerId.toString(), requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            const body = data.results[0].body
+            console.log("THIS")
+            console.log(data)
+            const recipientId = data.results[0].recipient
+            fetch("https://api.botdoc.io/v1/module_container/recipient/" + recipientId.toString(), requestOptions)
+            .then(response => response.json())
+            .then(data => {        
+                console.log(data)        
+                setPreview(data.first_name + " " + data.last_name + " : " + body)
+                console.log("HEYYY")
+            })
+            // setPreview(data.results[0].body)
+            // console.log("HEYYY")
+        })
+
+    }, [])
     function click() {
         // find container
         var myHeaders = new Headers();
@@ -14,7 +45,8 @@ function ChatCard(props) {
             headers: myHeaders,
             redirect: 'follow'
         };
-        const id = props.accountId === "0" ? props.chat.recipientItemId : props.chat.recipientItemId1
+        const id =  props.chat.recipientItemId
+        console.log(id, props.chat)
         fetch("https://api.botdoc.io/v1/module_container/recipientitem/" + id + "/", requestOptions)
         .then(response => response.json())
         .then(data => {
@@ -31,7 +63,7 @@ function ChatCard(props) {
     // myHeaders.append("Content-Type", "application/json");
     // const body = JSON.stringify({
     //     page_type: "p2",
-    //     callback_url: "http://be7d-140-180-240-87.ngrok.io/checkMessage"
+    //     callback_url: "http://0e18-140-180-240-87.ngrok.io/checkMessage"
     // })
 
     // var requestOptions = {
@@ -46,7 +78,6 @@ function ChatCard(props) {
     // .then(data => {
     //     console.log(data);
     //     let containerId = data.id
-    //     // containerId = 1492726
 
 
     //     var myHeaders = new Headers();
@@ -55,8 +86,8 @@ function ChatCard(props) {
     //     myHeaders.append("Content-Type", "application/json");
 
     //     const body = JSON.stringify({
-    //         first_name: "Tai",
-    //         last_name: "Gurr"
+    //         first_name: "Ty",
+    //         last_name: "Gerr"
     //     })
 
     //     var requestOptions = {
@@ -65,8 +96,7 @@ function ChatCard(props) {
     //     body: body,
     //     redirect: 'follow'
     //     };
-    //     // containerId = 1492884
-
+    //     // containerId = 1493002
     //     // recipient
     //     fetch("https://api.botdoc.io/v1/module_container/container/" + containerId + "/recipient/", requestOptions)
     //     .then(response => response.json())
@@ -137,7 +167,8 @@ function ChatCard(props) {
             <strong style={{paddingRight:"10%"}}>{props.chat.name}</strong>
             <div style={{height: "100%", display: "flex", flexDirection: "column", justifyContent: "center"}} >
                 <div>
-                    {props.chat.preview}
+                    {preview}
+                    {/* {preview === "" ? preview : props.chat.preview} */}
                 </div>
             </div>
             

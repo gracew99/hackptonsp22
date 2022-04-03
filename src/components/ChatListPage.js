@@ -10,11 +10,11 @@ const chats = [
       name: "Squad", 
       preview: "tree824: Yeah man I know exactly what you mean. That happened to me last year.",
       img: "/profile.png",
-      containerId: 1492884,
-      recipientId: 1581170,
-      recipientItemId: 1584080,
-      recipientId1: 1581082,
-      recipientItemId1: 1583993,
+      containerId: 1493002,
+      recipientId: 1581282,
+      recipientItemId: 1584187,
+      // recipientId1: ,
+      // recipientItemId1: ,
   
   }, 
   {
@@ -22,40 +22,45 @@ const chats = [
       name: "Struggle Bus", 
       preview: "pond425: We're rooting for you- ur doing gr8!",
       img: "/profile1.png",
-      containerId: 1492725,
-      recipientId: 1581087,
-      recipientItemId: 1583998,
-      recipientId1: 1581081,
-      recipientItemId1: 1583992,
+      containerId: 1492930,
+      recipientId: 1581234,
+      recipientItemId: 1584143,
   },
   {
       id: 2, 
       name: "Staying Strong", 
       preview: "polar2220: that made my day, thanks for sharing! im actually so encouraged :)",
       img: "/frog.jpeg",
-      containerId: 1492726,
-      recipientId: 1581088,
-      recipientItemId: 1583999,
-      recipientId1: 1581080,
-      recipientItemId1: 1583991
+      containerId: 1492927,
+      recipientId: 1581236,
+      recipientItemId: 1584145,
   },
   {
       id: 3, 
       name: "The Fam", 
+      containerId: 1492932,
       preview: "juggler2232: woahhh that's so cool man! i wish i could do that!!",
-      img: "/download.jpeg"
+      img: "/download.jpeg",
+      recipientId: 1581218,
+      recipientItemId: 1584127
   },
   {
       id: 4, 
       name: "Club", 
+      containerId: 1492933,
       preview: "spikel33: yeah, I'd appreciate accountability with that^^",
-      img: "/dog.jpeg"
+      img: "/dog.jpeg",
+      recipientId: 1581219,
+      recipientItemId: 1584128
   },
   {
       id: 5, 
       name: "Day Ones", 
+      containerId: 1492934,
       preview: "bear2041: *sigh* it's been a really tough week guys :(",
-      img: "/egg.png"
+      img: "/egg.png",
+      recipientId: 1581220,
+      ecipientItemId: 1584129
   }
 ]
 
@@ -65,11 +70,11 @@ const chats1 = [
       name: "Squad", 
       preview: "tree824: Yeah man I know exactly what you mean. That happened to me last year.",
       img: "/profile.png",
-      containerId: 1492724,
-      recipientId: 1581086,
-      recipientItemId: 1583997,
-      recipientId1: 1581187,
-      recipientItemId1: 1584096,
+      containerId: 1493002,
+      recipientId: 1581286,
+      recipientItemId: 1584191,
+      // recipientId1: ,
+      // recipientItemId1: ,
   
   }, 
   {
@@ -77,40 +82,46 @@ const chats1 = [
       name: "Struggle Bus", 
       preview: "pond425: We're rooting for you- ur doing gr8!",
       img: "/profile1.png",
-      containerId: 1492725,
-      recipientId: 1581087,
-      recipientItemId: 1583998,
-      recipientId1: 1581081,
-      recipientItemId1: 1583992,
+      containerId: 1492930,
+      recipientId: 1581217,
+      recipientItemId: 1584126,
   },
   {
       id: 2, 
       name: "Staying Strong", 
       preview: "polar2220: that made my day, thanks for sharing! im actually so encouraged :)",
       img: "/frog.jpeg",
-      containerId: 1492726,
-      recipientId: 1581088,
-      recipientItemId: 1583999,
-      recipientId1: 1581080,
-      recipientItemId1: 1583991
+      containerId: 1492927,
+      recipientId: 1581215,
+      recipientItemId: 1584124,
+
   },
   {
       id: 3, 
       name: "Juggling a lot", 
+      containerId: 1492932,
       preview: "juggler2232: woahhh that's so cool man! i wish i could do that!!",
-      img: "/person.jpeg"
+      img: "/person.jpeg",
+      recipientId: 1581080,
+      recipientItemId: 1583991
   },
   {
       id: 4, 
       name: "positive vibes", 
+      containerId: 1492936,
       preview: "spikel33: yeah, I'd appreciate accountability with that^^",
-      img: "/pizza.webp"
+      img: "/pizza.webp",
+      recipientId: 1581222,
+      recipientItemId: 1584131
   },
   {
     id: 5, 
-    name: "OG gang", 
+    name: "OG gang",
+    containerId: 1492937, 
     preview: "chetmix3er: its been sooo long, how's it going?/",
-    img: "/fountain.webp"
+    img: "/fountain.webp",
+    recipientId: 1581223,
+    recipientItemId: 1584132
 },
   // {
   //     id: 5, 

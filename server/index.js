@@ -26,9 +26,11 @@ app.use((req, res, next) => {
   // return upcoming classIds for classes userId is registered for
   app.post('/checkMessage', (req, res) => {
     //   const containerId = req.params.containerId
-    
+      // console.log("iS THIS WORKING")
       console.log(req.body)
+      console.log("!!!!!")
       if (req.body.type === "message_reply") {
+        console.log(req.body.message_reply.body)
         const message = req.body.message_reply.body  
         const recipientId = req.body.message_reply.recipient
         var data = new FormData();
@@ -96,7 +98,10 @@ app.use((req, res, next) => {
 
       
     //    res.status(201).send({text: "hey"})
-    }
+    } else {
+      res.send({})
+    } 
+    
   })
 
   app.listen(process.env.PORT || 8000, () =>
