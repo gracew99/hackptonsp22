@@ -13,6 +13,7 @@ const chats = [
       containerId: 1493002,
       recipientId: 1581282,
       recipientItemId: 1584187,
+      otherRecipientId: 1581286
       // recipientId1: ,
       // recipientItemId1: ,
   
@@ -73,6 +74,7 @@ const chats1 = [
       containerId: 1493002,
       recipientId: 1581286,
       recipientItemId: 1584191,
+      otherRecipientId: 1581282
       // recipientId1: ,
       // recipientItemId1: ,
   
